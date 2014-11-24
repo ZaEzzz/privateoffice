@@ -1,0 +1,22 @@
+<header>
+    <a href='/'>Начальная страница</a>
+    <div id="userAuth">
+        {% if user.is_authenticated %}
+            <a href="/office/" class="nostyle">{{ user.first_name }} {{ user.last_name }}</a>
+            <a href="/logout/" class="nostyle" title="Выход">&#215;</a>
+		{% else %}
+            <div class="auth" onclick="ShowLoginForm()">
+                Авторизация
+            </div>
+            <div id="auth">
+                <div id="authLogin">
+                    <input autofocus="autofocus" id="id_login" maxlength="30" name="login" placeholder="Имя пользователя" type="text">
+                    <input id="id_password" name="password" placeholder="Пароль" type="password">
+                    <div id="authLoginBtn" onclick="login()">Войти</div>
+                </div>
+                <!--<input class="primaryAction" type="submit" value="Войти">
+                <div class="authRegister" onclick="ShowFormRegister()">Регистрация</div>-->
+            </div>
+        {% endif %}
+    </div>
+</header>

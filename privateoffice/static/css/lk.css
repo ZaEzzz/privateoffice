@@ -1,0 +1,168 @@
+body {
+    background-color: #fefefe;
+    /*
+    background: url(http://www.socwall.com/images/wallpapers/22268-2560x1600.jpg) no-repeat top center;
+    background: url(http://www.niceimage.ru/pic/201305/2560x1600/niceimage.ru-38138.jpg) no-repeat top center;
+    background: url(http://333v.ru/uploads/3d/3d046acb86657c6622c249f266184ae7.jpg) no-repeat top center;
+    */
+    background: url(http://content.foto.mail.ru/mail/soner30/22764/s-22928.jpg) no-repeat top center #111;
+    
+    padding: 0;
+    margin: 0;
+}
+header {
+    background-color: #333;
+    color: #eee;
+    margin: 0;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    top: 0;
+}
+header a {
+    color: #eee!important;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+footer {
+    width: 100%;
+    height: 30px;
+    background-color: #111;
+    color: #eee;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+}
+
+#modalWindowBkg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .8;
+    z-index: 100;
+}
+#modalWindowObj {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+}
+#modalWindow {
+    width: 350px;
+    position: relative;
+    margin: 100px auto;
+    z-index: 200;
+    background-color: #eee;
+    color: #333;
+    padding: 20px;
+}
+#closeModal {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 2em;
+    cursor: pointer;
+}
+#closeModal:hover {color: red;}
+#modalWindow table {
+    margin: 0 auto;
+}
+#userAuth {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.auth {
+    cursor: pointer;
+}
+#auth {
+    text-align: center;
+    position: fixed;
+    height: 85px;
+    width: 200px;
+    top: 30px;
+    right: 0px;
+    background-color: #666;
+    visibility: hidden;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    opacity: 0.9;
+}
+
+#authLoginBtn:hover, #authRegisterBtn, #authRegister{
+    cursor: pointer;
+    background-color: #333;
+}
+#authLoginBtn {
+    width: 100px;
+    margin: 10px auto;
+    padding: 5px;
+    background-color: #555;
+}
+#office_content {
+    background-color: #fafafa;
+    width: 900px;
+    margin: 50px auto 0 auto;
+    border: solid 1px #ddd;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+#searchGlobalInput {
+    margin: 0 auto;
+    display: block;
+    width: 300px;
+}
+#searchResult {
+    padding-top: 10px;
+}
+#searchCountry, #searchResort, #searchHotel {
+    border: solid 1px #ccc;
+    width: 250px;
+    height: 500px;
+    overflow: auto;
+}
+#searchCountry {
+    float: left;
+}
+#searchResort {
+    margin: 0 0 0 325px;
+}
+#searchHotel {
+    float: right;
+}
+.searchElement{
+    border-bottom: dotted 1px #ccc;
+    padding: 10px;
+    cursor: pointer;
+}
+.searchElement .hotelPrice {color:#ccc;}
+.searchElement:hover {
+    background-color: #fff;
+    color: #0074D9;
+}
+#selectedHotel {
+    margin: 10px auto;
+    width: 400px;
+    border: dotted 1px #aaa;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+#selectedHotel:hover {background-color: #999;}
+
+.orderItem {
+    padding: 10px;
+}

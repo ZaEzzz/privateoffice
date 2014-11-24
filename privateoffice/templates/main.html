@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title>LK</title>
+    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/admin/base.css">
+
+
+
+    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/lk.css">
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js" onerror="JavaScript:alert('Error loading file [' + this.src + '] !');" ></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/lk.js" onerror="JavaScript:alert('Error loading file [' + this.src + '] !');" ></script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            console.log('reading');
+            var bg_width = 2560; // Ширина фонового изображения
+            var max = 200; // Величина максимального смещения
+                oldX = 0;
+                cur = 10;
+                num_l = 0;
+                num_r = 0;
+                $(window).mousemove(function(event)
+                {
+                    var bg_pos = Math.round(($(window).width() - bg_width)/2);
+                    
+
+                    if (event.pageX < oldX)
+                    {
+                        if (cur<max)
+                        {
+                            $('body').css('background-position', bg_pos-Math.round((100-cur)/4)+'px 0px');
+                            cur++;
+                            num_l++;
+                            if (num_l > 4) num_l = 0;
+                        }
+                    }
+                    if (event.pageX > oldX)
+                    {
+                        if (cur>0)
+                        {
+                            $('body').css('background-position', bg_pos-Math.round((100-cur)/4)+'px 0px');
+                            cur--;    
+                            num_r++;
+                            if (num_r > 4) num_r = 0;
+                        }
+                    }
+                    oldX = event.pageX;
+                });
+        });
+    </script>
+</head>
+<body>
+    {% include 'header.html' %}
+    {% block content %}{% endblock %}
+    {% include 'footer.html' %}
+</body>

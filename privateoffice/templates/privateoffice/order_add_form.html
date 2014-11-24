@@ -1,0 +1,16 @@
+<div id="modalWindowBkg">
+
+</div>
+<div id="modalWindowObj">
+    <div id="modalWindow">
+        <div id="closeModal" onclick="closeModalWindow()">×</div>
+
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Отправить заявку" onclick="confirmOrder()"/>
+
+    </div>
+</div>
+

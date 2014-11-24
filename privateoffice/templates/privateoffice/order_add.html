@@ -1,0 +1,24 @@
+{% extends 'privateoffice/base.html' %}
+{% block main_content %}
+    <input type="text" placeholder="Искать..." id="searchGlobalInput" onkeyup="searchGlobal(this)">
+    <div id="searchResult">
+        <div id="searchCountry">
+        {% for country in countryList %}
+            <div class="searchElement" id="country_{{ country.id }}" onclick="showChildren(this)">{{ country }}</div>
+        {% endfor %}
+        </div>
+        <div id="searchHotel">
+        {% for hotel in hotelList %}
+            <div class="searchElement" id="hotel_{{ hotel.id }}" onclick="showParent(this)">{{ hotel }} <span class="hotelPrice">${{ hotel.price }}</span></div>
+        {% endfor %}
+        </div>
+        <div id="searchResort">
+        {% for resort in resortList %}
+            <div class="searchElement" id="resort_{{ resort.id }}" onclick="showOther(this)">{{ resort }}</div>
+        {% endfor %}
+        </div>
+        <div id="selectedHotel" onclick="addOrder()">
+            Выбирите отель для оформления заявки
+        </div>
+    </div>
+{% endblock %}

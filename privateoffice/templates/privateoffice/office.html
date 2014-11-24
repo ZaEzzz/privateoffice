@@ -1,0 +1,37 @@
+{% extends 'privateoffice/base.html' %}
+{% block main_content %}
+        <div>
+            <h1>Личный кабинет пользователя {{ user }}</h>
+        </div>
+    <hr>
+    {% if orderList %}
+        {% for order in orderList %}
+            <div class="orderItem">
+                Вы собираетесь {{ order }} отправиться в отель {{ order.hotel }} на {{ order.night }} ночей.<br>
+                {% if order.manager %}
+                    Вам нахначен персональный менеджер {{ order.manager }}/
+                {% else %}
+                    Вам пока не назначем персональный менеджер.
+                {% endif %}
+                <br>
+                Номер заявки: {{ order.pk }} <br>
+                Текущий статус заявки: {{ order.get_status_display }}<br>
+                <br>
+                <a href='/office/order/{{ order.pk }}'>Скачать договор в формате PDF</a>
+            </div>
+        {% endfor %}
+    {%  else %}
+        <div>
+            У вас нет заявок. Может стоит съездить в отпуск?
+        </div>
+    {% endif %}
+    {% if orderHistory %}
+        {% for order in orderList %}
+            {{ order }}
+        {% endfor %}
+    {%  else %}
+        <!--<div>
+            Вы еще никуда не ездили?! Это нужно срочно исправлять!
+        </div>-->
+    {% endif %}
+{% endblock %}
